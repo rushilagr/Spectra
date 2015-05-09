@@ -1,0 +1,14 @@
+h2
+	|User Dasboard
+|Welcome, 
+=current_user.email
+br
+br
+|Instructions <br/> ....<br/> ....
+br
+br
+=button_to 'See current progress', progress_path, method: :get if current_user.answers.count != 0
+br
+=button_to 'Take Test', test_path, method: :get
+br
+=link_to 'Logout', destroy_user_session_path, method: :delete

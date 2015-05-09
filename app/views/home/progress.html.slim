@@ -1,0 +1,20 @@
+h2
+	|Current Progress
+
+|Correct Answers: 
+= current_user.correct_answer_count
+br
+|Wrong Answers: 
+= current_user.wrong_answer_count
+br
+|Passed Answers: 
+= current_user.passed_answer_count
+br
+br
+
+- current_user.answers.each do |a|
+	li 
+		=link_to "Question #{a.question.id}", result_path(answer_id: a.id)
+		br
+br
+= link_to "Dashboard", dashboard_path

@@ -1,0 +1,10 @@
+h2 
+	|TEST
+== render 'home/question'
+
+=simple_form_for @answer, url: answers_path(question_id: @question) do |f| 
+  =f.input :body , label: false
+  =f.submit "Submit Answer"
+  =f.button :button, "Pass Question", url: answers_path(question_id: @question, passed: true)
+br
+= link_to "Dashboard", dashboard_path

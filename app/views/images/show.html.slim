@@ -1,0 +1,12 @@
+p#notice = notice
+/ |Question:
+/ = @image.question.id
+
+= image_tag @image.file.url
+br
+
+== render @question
+
+= link_to 'Edit', edit_image_path(@image)
+'|
+= link_to 'Back', images_path

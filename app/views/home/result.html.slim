@@ -1,0 +1,20 @@
+== render 'home/question'
+
+br
+br
+|Your answer: 
+= @answer.body
+
+br
+-if !current_user.is_first_answer? @answer
+	br
+	= link_to "Previous Question", result_path(answer_id: @answer.id - 1)
+
+-if !current_user.is_last_answer? @answer
+	br
+	= link_to "Next Question",result_path(answer_id: @answer.id + 1)
+br
+= link_to "Current Progress", progress_path
+br
+= link_to "Dashboard", dashboard_path
+

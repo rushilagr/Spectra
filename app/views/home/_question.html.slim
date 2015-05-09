@@ -1,0 +1,14 @@
+
+|Q.no: 
+=  @question.id
+p
+
+  = @question.body
+
+== render @question.images
+br
+
+-if action_name != 'test'
+	
+	|Correct answer: 
+	= @question.answer
