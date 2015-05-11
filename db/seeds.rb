@@ -48,6 +48,10 @@ Answer.create([
   {body: "Your answer 2", question_id: 2, user_id: 1}
 ])
 
+Admin.create([
+  {email: "admin@email.com", password: "groupsite"}
+])
+
 Image.create([
   {question_id: nil, created_at: "2015-05-09 14:03:39", updated_at: "2015-05-09 14:03:39", file_file_name: "Q1_1.png", file_content_type: "image/png", file_file_size: 1446936, file_updated_at: "2015-05-09 14:03:39"},
   {question_id: nil, created_at: "2015-05-09 14:03:39", updated_at: "2015-05-09 14:03:39", file_file_name: "Q1_1.png", file_content_type: "image/png", file_file_size: 1446936, file_updated_at: "2015-05-09 14:03:39"},

@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_admin!, only: [:show, :edit, :update, :destroy, :index, :new]
+  before_action :not_guest?, only: [:create]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers

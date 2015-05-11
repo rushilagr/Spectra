@@ -1,0 +1,18 @@
+
+.navbar.navbar-default.navbar-static-top  role="navigation"
+  .container 
+
+    .navbar-header 
+      .navbar-brand.bold Spectra
+
+    ul.nav.navbar-nav.navbar-right
+		- if not_guest?
+			li = link_to 'Dasboard', dashboard_path, method: :get
+			li = link_to 'Logout', get_logout_path, method: :delete
+		-else
+			li = link_to 'Sign Up', new_user_registration_path, method: :get
+			li = link_to 'Sign In', new_user_session_path, method: :get
+
+
+
+

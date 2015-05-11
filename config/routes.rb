@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :images
 
   resources :answers
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :questions
   root 'home#index'
+  # get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   get '/dashboard' => 'home#dashboard', as: 'user_root'  
   get '/dashboard' => 'home#dashboard', as: 'dashboard'  
   get '/progress' => 'home#progress', as: 'progress'  

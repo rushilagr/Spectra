@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-# gem 'attachment_on_the_fly'
+gem 'omniauth-facebook'
+
+gem 'hide_heroku'
+
+gem 'cancancan', '~> 1.10'
 
 gem "figaro"
 
@@ -14,8 +18,8 @@ gem 'html2slim'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +33,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'slim-rails'
 
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 gem 'simple_form'
 # Use jquery as the JavaScript library
