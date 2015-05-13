@@ -40,7 +40,7 @@ By what 5 letter word is this image known? HINT: the word means “reach a state
 ])
 
 User.create([
-  {name: "Rushil", email: "r@r.com", password: "groupsite"}
+  {name: "Rushil", email: "user@email.com", password: "groupsite"}
 ])
 
 Answer.create([
