@@ -5,8 +5,9 @@ br
 
 .container.col-md-8.col-md-offset-2.text-center
 
-	=simple_form_for @answer, url: answers_path(question_id: @question) do |f| 
-		=f.input :body , label: false, input_html:{style:"width:83%; rows=4;"}, class:"form-control"
+	=simple_form_for @answer, url: answers_path(question_id: @question) do |f|
+
+		=f.input :body , label: false, input_html:{style:"width:83%; margin-left: 80px; vertical-align:middle;", rows:'1;', },placeholder:'Answer'
 		br
 	 	=f.button :submit, "Submit Answer",class:'btn btn-success'
 	 	br

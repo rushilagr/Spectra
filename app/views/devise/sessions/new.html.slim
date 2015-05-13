@@ -13,11 +13,10 @@ br
             = f.error_notification
             .form-inputs
 
-                = f.input :email, label:false, placeholder: "Email", html:{class:"form-control"}
+                = f.input :email, label:false, placeholder: "Email"
                
                 = f.input  :password, autocomplete: "off", label:false, placeholder: "Password", style:"width:100%;"
 
-            br
             br
             = f.button :submit, "SIGN IN", class:"btn btn-success"
 
