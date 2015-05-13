@@ -1,17 +1,21 @@
 
-.navbar.navbar-default.navbar-static-top  role="navigation"
-  .container 
+.navbar.navbar-default
+	.container 
 
-    .navbar-header 
-      .navbar-brand.bold Spectra
+	    .navbar-header 
+	    	a href="#{root_url}"
+	    		.navbar-brand
+		      		|Spectra	
 
-    ul.nav.navbar-nav.navbar-right
-		- if not_guest?
-			li = link_to 'Dasboard', dashboard_path, method: :get
-			li = link_to 'Logout', get_logout_path, method: :delete
-		-else
-			li = link_to 'Sign Up', new_user_registration_path, method: :get
-			li = link_to 'Sign In', new_user_session_path, method: :get
+	    ul.nav.navbar-nav.navbar-right 
+			- if not_guest?
+				li = link_to 'Dasboard', dashboard_path, method: :get 
+				li = link_to 'Continue Test', test_path, method: :get if current_user.answers.count != 0
+				li = link_to 'Current Progress', progress_path, method: :get if current_user.answers.count != 0
+				li = link_to 'Logout', get_logout_path, method: :delete
+			-else
+				li = link_to 'Sign Up', new_user_registration_path, method: :get
+				li = link_to 'Sign In', new_user_session_path, method: :get
 
 
 

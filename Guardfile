@@ -24,9 +24,10 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard 'livereload' do
+  watch(%r{app/assets/stylesheets.+\.(scss|css)$})
   watch(%r{app/views/.+\.(erb|haml|slim)$})
   watch(%r{app/helpers/.+\.rb})
-  watch(%r{public/.+\.(css|js|html)})
+  watch(%r{public/.+\.(scss|css|js|html)})
   watch(%r{config/locales/.+\.yml})
   # Rails Assets Pipeline
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }

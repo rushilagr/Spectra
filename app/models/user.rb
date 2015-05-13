@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
  	def correct_answer_count
  		count = 0
  		answers.each do |a|
- 			count = count +1 if(a.correct? == true)
+ 			count = count +1 if(a.correct?)
  		end
  		count
  	end
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
  	def wrong_answer_count
  		count = 0
  		answers.each do |a|
- 			count = count +1 if(a.correct? == false)
+ 			count = count +1 if(!a.correct?)
  		end
  		count
  	end
