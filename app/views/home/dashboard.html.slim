@@ -1,16 +1,24 @@
-h2
-	|User Dasboard
-|Welcome, 
-=current_user.name
 br
 br
-|Instructions <br/> ....<br/> ....
 br
+.container.col-md-8.col-md-offset-2.jumbotron
+	.container.col-md-6.col-md-offset-3.text-center				
 
-br
--if current_user.answers.count == 0
-	=button_to 'Take Test', test_path, method: :get, class:'btn btn-primary'
--else
-	=button_to 'Continue Test', test_path, method: :get, class:'btn btn-primary'
-br
-=button_to 'See current progress', progress_path, method: :get, class:'btn btn-info' if current_user.answers.count != 0
+		h2
+			|Dashboard
+		br
+		|Welcome, 
+		=current_user.name
+
+		br
+		br
+		|Instructions <br/> ....<br/> ....
+		br
+
+		br
+		-if current_user.answers.count == 0
+			=button_to 'Take Test', test_path, method: :get, class:'btn btn-primary'
+		-else
+			=button_to 'Continue Test', test_path, method: :get, class:'btn btn-primary'
+		br
+		=button_to 'See current progress', progress_path, method: :get, class:'btn btn-info' if current_user.answers.count != 0

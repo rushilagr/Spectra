@@ -1,14 +1,20 @@
-
-|Q.no: 
-=  @question.id
-p
-
-  = @question.body
-
-== render @question.images
-br
-
--if action_name != 'test'
+.container.col-md-8.col-md-offset-2.text-center
 	
-	|Correct answer: 
-	= @question.answer
+	h1 style="font-size:50px;"
+		|Q 
+		=  @question.id
+	br
+	br
+	p style="text-align:justify; font-size:15px; line-height:30px; width:50em; margin: 0 auto;"
+		= @question.body
+
+	br
+	br
+	== render @question.images
+	br
+	br
+
+	-if action_name != 'test'
+		
+		|Correct answer: 
+		= @question.answer

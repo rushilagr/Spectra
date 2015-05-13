@@ -1,10 +1,14 @@
-h2 
-	|TEST
+/ h1 style="font-size:40px;"
+/ 	|TEST
+br
 == render 'home/question'
 
-=simple_form_for @answer, url: answers_path(question_id: @question) do |f| 
-  =f.input :body , label: false
-  =f.button :submit, "Submit Answer",class:'btn btn-success'
-  br
-  =f.button :button, "Pass Question", url: answers_path(question_id: @question, passed: true),class:'btn btn-primary'
+.container.col-md-8.col-md-offset-2.text-center
+
+	=simple_form_for @answer, url: answers_path(question_id: @question) do |f| 
+		=f.input :body , label: false, input_html:{style:"width:83%; rows=4;"}, class:"form-control"
+		br
+	 	=f.button :submit, "Submit Answer",class:'btn btn-success'
+	 	br
+	 	=f.button :button, "Pass Question", url: answers_path(question_id: @question, passed: true),class:'btn btn-primary'
 
