@@ -8,8 +8,10 @@ class HomeController < ApplicationController
 	end
 
 	def test
+		if(params[:wrong_answer] == 'true')
+			@wrong_answer = true
+		end
 		@question = current_user.current_question
-		@answer = Answer.new
 	end
 
 	def result
@@ -19,6 +21,7 @@ class HomeController < ApplicationController
 
 	def progress
 	end
+
 end
 
 

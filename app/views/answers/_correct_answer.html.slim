@@ -1,0 +1,11 @@
+br
+/ .has-success
+/ 	=simple_form_for Answer.new, url: answers_path(question_id: @question), remote:true do |f|
+
+/ 		=f.input :body , label: false, input_html:{style:"width:83%; margin-left: 80px; vertical-align:middle;", rows:'1;', class:"input-lg", id:'inputSuccess', value:}, placeholder:'Answer'
+
+.text-center
+	h1.text-success
+		|Correct Answer!
+br
+= button_to "Continue", test_path, class:'btn btn-success btn-lg'

@@ -20,16 +20,11 @@ table.table.table-striped.table-hover
   	- current_user.answers.each do |a|
   		- if a.correct?
 		    tr.success
-				td =a.question.id
-		    	td =a.question.body
-		    	td =a.question.answer
-		    	td =a.body
+		    	== render ('home/progress_table'), a:a
 		- else
 			tr.danger
-				td <a href="#{result_path(answer_id: a.id)}" class="btn btn-link" style="display: block;">#{a.question.id}</a>
-				td =a.question.body
-				td =a.question.answer
-				td =a.body
+		    	== render ('home/progress_table'), a:a
+				
 
 
 

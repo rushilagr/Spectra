@@ -4,11 +4,7 @@ class Answer < ActiveRecord::Base
 
 
   def correct?
-    if(question.answer == body)
-      true
-    else
-      false
-    end
+    question.correct_answer? body
   end
 
   def wrong?

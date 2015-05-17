@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
   before_action :not_guest?, only: [:create]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
+
   # GET /answers
   # GET /answers.json
   def index
@@ -26,19 +27,31 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
-    @answer = Answer.new(answer_params)
-    @answer.body = "" if(params[:passed] == true)
-    @answer.question = Question.find(params[:question_id])
-    @answer.user = current_user
-    respond_to do |format|
-      if @answer.save
-        format.html { redirect_to test_path, notice: ''}
-        format.json { render :show, status: :created, location: @answer }
-      else
-        format.html { redirect_to test_path }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
-      end
-    end
+    q = Question.find(params[:question_id])
+
+    if(q.correct_answer?(answer_params[:body]) != true)
+    		
+    		respond_to do |format|
+    			format.js { render 'wrong_answer.js.erb'} 
+    		end
+    
+    else
+	    @answer = Answer.new(answer_params)
+	    @answer.body = "" if(params[:passed] == true)
+	    @answer.question = q
+	    @answer.user = current_user
+	    respond_to do |format|
+	      if @answer.save
+	      	format.js { render 'correct_answer.js.erb'}
+	        format.html { redirect_to test_path, notice: 'Correct Answer!'}
+	        format.json { render :show, status: :created, location: @answer }
+	      else
+	        format.html { redirect_to test_path }
+	        format.json { render json: @answer.errors, status: :unprocessable_entity }
+	      end
+	    end
+	  end
+
   end
 
   # PATCH/PUT /answers/1

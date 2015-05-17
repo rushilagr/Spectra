@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'jquery-ui-rails'
+
 gem 'omniauth-facebook'
 
 gem 'hide_heroku'
