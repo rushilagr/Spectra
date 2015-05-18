@@ -1,1 +1,2 @@
-$('#answer_feedback').html("<%= escape_javascript(render 'answers/correct_answer') %>");
+$('#answer_feedback').effect('fade', 500);
+setTimeout(function(){$('#answer_feedback').html("<%= escape_javascript(render 'answers/correct_answer') %>").fadeIn(100);}, 500);

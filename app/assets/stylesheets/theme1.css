@@ -3175,8 +3175,7 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #772953;
-  border-color: #772953;
+  background-color: #52A3CC;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -3185,8 +3184,7 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
   color: #ffffff;
-  background-color: #511c39;
-  border-color: #491933;
+  background-color: #3a87ad;
 }
 .btn-info:active,
 .btn-info.active,

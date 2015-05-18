@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Question.create([
-  {body: "A series of 3 print ads created for Union Bank by Mudra Communications to promote one of their services. What service is being promoted via these cheeky ads? ", kind: 1, answer: "Correct Answer 1"},
-  {body: "This online hospitality startup underwent a rebrand in July 2014 and released its new logo. They explained the concept behind it by releasing this sketch. The logo faced a lot of criticism on social media due to its design. Name the startup.", kind: 2, answer: "Correct Answer 2"},
+  {body: "A series of 3 print ads created for Union Bank by Mudra Communications to promote one of their services. What service is being promoted via these cheeky ads? ", kind: 1, answer: "#1"},
+  {body: "This online hospitality startup underwent a rebrand in July 2014 and released its new logo. They explained the concept behind it by releasing this sketch. The logo faced a lot of criticism on social media due to its design. Name the startup.", kind: 2, answer: "#2"},
   {body: "X is a puzzle video game programmed and designed by Alexy Pajitnov in the Soviet Union in 1984. Pajitnov derived X's name by combining two words: A from the Greek numerical prefix for the 5th whole number and B, which was Pajitnov's favourite sport. 
 i.e. X = A + B. 
 
-The X effect occurs when people devote a significant amount of time and attention to an activity that it begins to overshadow their thoughts, metal images and dreams. ", kind: 1, answer: "Correct Answer 3"},
+The X effect occurs when people devote a significant amount of time and attention to an activity that it begins to overshadow their thoughts, metal images and dreams. ", kind: 1, answer: "#3"},
 		
   {body: "Thou shalt not simply trot out thy usual shtick.
 Thou shalt dream a great dream, or show forth a wondrous new thing, or share something thou hast never shared before.
@@ -23,19 +23,19 @@ Thou shalt not flaunt thine ego. Be thou vulnerable. Speak of thy failure as wel
 Thou shalt not sell from the stage: neither thy company, thy goods, thy writings, nor thy desperate need for funding; lest thou be cast aside into outer darkness.
 Thou shalt remember all the while: laughter is good.
 Thou shalt not read thy speech.
-Thou shalt not steal the time of them that follow thee.", kind: 2, answer: "Correct Answer 4"},
+Thou shalt not steal the time of them that follow thee.", kind: 2, answer: "#4"},
 	
-  {body: "“X Problem” is a phrase originally used in social planning to describe a problem that is difficult or impossible to solve because of incomplete, contradictory, and changing requirements that are often difficult to recognize. The term “X” is used to denote resistance to resolution, rather than evil. Moreover, because of complex interdependencies, the effort to solve one aspect of a “X” may reveal or create other problems.  ", kind: 1, answer: "Correct Answer 5"},
+  {body: "“X Problem” is a phrase originally used in social planning to describe a problem that is difficult or impossible to solve because of incomplete, contradictory, and changing requirements that are often difficult to recognize. The term “X” is used to denote resistance to resolution, rather than evil. Moreover, because of complex interdependencies, the effort to solve one aspect of a “X” may reveal or create other problems.  ", kind: 1, answer: "#5"},
 	
   {body: "This is the default computer wallpaper of Microsoft's Windows XP. It was clicked by former National Geographic photographer Charles O'Rear. He sold it to Corbis for use as a stock photo. Several years later, Microsoft engineers chose a digitised version of the image and licensed it from O'Rear. 
 Since it was taken, the landscape in it has changed, with grapevines planted on the hill and field in the foreground(pictured onscreen), making O'Rear's image impossible to duplicate for the time being. 
-By what 5 letter word is this image known? HINT: the word means “reach a state of perfect happiness, oblivious of everything else.”", kind: 1, answer: "Correct Answer 6"},
+By what 5 letter word is this image known? HINT: the word means “reach a state of perfect happiness, oblivious of everything else.”", kind: 1, answer: "#6"},
 	
-  {body: "The name of an entrepreneur has been censored here. He is still alive, name him. ", kind: 1, answer: "Correct Answer 7"},
+  {body: "The name of an entrepreneur has been censored here. He is still alive, name him. ", kind: 1, answer: "#7"},
 
-  {body: "Logo for which project. ", kind: 1, answer: "Correct Answer 8"},
+  {body: "Logo for which project. ", kind: 1, answer: "#8"},
 
-  {body: "Time Magazine, July 16th 2012, Outllok Magazine India followed suite on 30th July 2012. The text has been censored, what was it? ", kind: 1, answer: "Correct Answer 9"}
+  {body: "Time Magazine, July 16th 2012, Outllok Magazine India followed suite on 30th July 2012. The text has been censored, what was it? ", kind: 1, answer: "#9"}
 
 ])
 
@@ -45,8 +45,8 @@ User.create([
 
 Answer.create([
   {body: "Your answer 1", question_id: 1, user_id: 1},
-  {body: "Correct Answer 2", question_id: 2, user_id: 1},
-  {body: "Correct Answer 3", question_id: 3, user_id: 1}
+  {body: "#2", question_id: 2, user_id: 1},
+  {body: "#3", question_id: 3, user_id: 1}
 ])
 
 Admin.create([

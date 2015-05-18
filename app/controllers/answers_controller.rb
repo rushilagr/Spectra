@@ -29,21 +29,21 @@ class AnswersController < ApplicationController
   def create
     q = Question.find(params[:question_id])
 
-    if(q.correct_answer?(answer_params[:body]) != true)
-    		
+    if(!is_passed? && q.correct_answer?(answer_params[:body]) != true)
     		respond_to do |format|
+          # format.js { render 'correct_answer.js.erb'} 
     			format.js { render 'wrong_answer.js.erb'} 
     		end
     
     else
 	    @answer = Answer.new(answer_params)
-	    @answer.body = "" if(params[:passed] == true)
+	    @answer.body = "" if(is_passed?)
 	    @answer.question = q
 	    @answer.user = current_user
 	    respond_to do |format|
 	      if @answer.save
-	      	format.js { render 'correct_answer.js.erb'}
-	        format.html { redirect_to test_path, notice: 'Correct Answer!'}
+          format.js { render 'correct_answer.js.erb'} if(!is_passed?)
+          format.js { render 'passed_answer.js.erb'} if(is_passed?)
 	        format.json { render :show, status: :created, location: @answer }
 	      else
 	        format.html { redirect_to test_path }
@@ -87,5 +87,13 @@ class AnswersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
       params.require(:answer).permit(:body, :question_id, :user_id)
+    end
+
+    def is_passed?
+      if(answer_params[:body] == "" || params[:passed] == 'true')
+        true
+      else
+        false
+      end
     end
 end

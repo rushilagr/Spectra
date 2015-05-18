@@ -1,29 +1,33 @@
-h2
-	|Current Progress
+br
+br
+.container.col-md-8.col-md-offset-2.text-center.panel.panel-default.panel-body
+    h1
+    	|Current Progress
+    br
+    br
 
+    .progress
+      .progress-bar.progress-bar-success style=("width: #{correct_answer_ratio}%") 
+      .progress-bar.progress-bar-danger style=("width: #{wrong_answer_ratio}%") 
 
-.progress
-  .progress-bar.progress-bar-success style=("width: #{correct_answer_ratio}%") 
-  .progress-bar.progress-bar-danger style=("width: #{wrong_answer_ratio}%") 
+    br
+    br
 
-
-
-
-table.table.table-striped.table-hover
-  thead
-    tr
-      th #
-      th Question
-      th Correct Answer
-      th Your Answer
-  tbody
-  	- current_user.answers.each do |a|
-  		- if a.correct?
-		    tr.success
-		    	== render ('home/progress_table'), a:a
-		- else
-			tr.danger
-		    	== render ('home/progress_table'), a:a
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th #
+          th Question
+          th Correct Answer
+          th Your Answer
+      tbody
+      	- current_user.answers.each do |a|
+      		- if a.correct?
+    		    tr.success
+    		    	== render ('home/progress_table'), a:a
+    		- else
+    			tr.danger
+    		    	== render ('home/progress_table'), a:a
 				
 
 

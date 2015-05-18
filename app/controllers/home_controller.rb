@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only: [:dashboard, :test, :result]
+  before_action :authenticate_user!, only: [:dashboard, :test, :result, :progress]
 
 	def index
 	end

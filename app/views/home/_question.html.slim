@@ -1,19 +1,18 @@
-.container.col-md-8.col-md-offset-2.text-center
 	
-	h1 style="font-size:50px;"
-		|Q 
-		=  @question.id
-	br
-	br
-	p style="text-align:justify; font-size:15px; line-height:30px; width:50em; margin: 0 auto;"
-		= @question.body
+h1 style="font-size:50px;"
+	|Q 
+	=  @question.id
+br
+br
+p style="text-align:justify; font-size:15px; line-height:30px; width:50em; margin: 0 auto;"
+	= @question.body
 
-	br
-	br
-	== render @question.images
+br
+br
+== render @question.images
 
 
-	-if action_name != 'test'
-		br
-		|Correct answer: 
-		= @question.answer
+-if action_name != 'test'
+	br
+	|Correct answer: 
+	= @question.answer

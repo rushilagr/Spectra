@@ -4,26 +4,28 @@ br
 .container.col-md-8.col-md-offset-2.jumbotron
 	.container.col-md-6.col-md-offset-3.text-center				
 
-		h2
+		h1
 			|Dashboard
-		br
-		|Welcome, 
-		=current_user.name
+		/ br
+		/ |Welcome, 
+		/ =current_user.name
+
+		/ / br
+		/ / br
+		/ / |Instructions 
+		/ / ul
+		/ / 	li
+		/ /  		|still have to figure out a 
+		/ / 	li
+		/ / 		|good way for diaplaying these
+		/ / br
 
 		br
-		br
-		|Instructions 
-		ul
-			li
-		 		|still have to figure out a 
-			li
-				|good way for diaplaying these
-		br
-
 		br
 		-if current_user.answers.count == 0
-			=button_to 'Take Test', test_path, method: :get, class:'btn btn-primary'
+			=button_to 'Start Test', test_path, method: :get, class:'btn btn-success btn-lg'
 		-else
-			=button_to 'Continue Test', test_path, method: :get, class:'btn btn-primary'
+			=button_to 'Continue Test', test_path, method: :get, class:'btn btn-success btn-lg'
+
 		br
-		=button_to 'See current progress', progress_path, method: :get, class:'btn btn-info' if current_user.answers.count != 0
+		=button_to 'See current progress', progress_path, method: :get, class:'btn btn-info btn-lg' if current_user.answers.count != 0

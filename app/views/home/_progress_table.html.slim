@@ -1,4 +1,8 @@
 td <a href="#{result_path(answer_id: a.id)}" class="btn btn-link" style="display: block;">#{a.question.id}</a>
 td =a.question.body
 td =a.question.answer
-td =a.body
+td 
+	-if(a.body != "")
+		=a.body 
+	-else
+		|Passed

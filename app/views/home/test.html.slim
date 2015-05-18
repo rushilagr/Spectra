@@ -1,25 +1,28 @@
 / h1 style="font-size:40px;"
 / 	|TEST
 br
+br
+br
 	
 / h1.text-center.text-primary 
 / 	-if @wrong_answer == true
 / 		|Try again
+.container.col-md-8.col-md-offset-2.text-center.panel.panel-default 
+	.panel-body
+		== render 'home/question'
 
-== render 'home/question'
+		div id="answer_feedback"
+			br
+			=simple_form_for Answer.new, url: answers_path(question_id: @question), remote:true do |f|
 
-.container.col-md-8.col-md-offset-2.text-center id="answer_feedback"
-	br
-	=simple_form_for Answer.new, url: answers_path(question_id: @question), remote:true do |f|
+				=f.input :body , label: false, input_html:{class:"input-lg"}, placeholder:'Answer'
 
-		div id="answer_area"
-			=f.input :body , label: false, input_html:{style:"width:83% !important; margin-left: 88px; text-align:center;", rows:'1 !important;', class:"input-lg"}, placeholder:'Answer'
+				br
+			 	=f.button :submit, "Submit Answer", style:"margin-left: 30px;", class:'btn btn-success btn-lg'
 
-		br
-	 	=f.button :submit, "Submit Answer", style:"margin-left: 30px;", class:'btn btn-success btn-lg'
-
-	 	=f.button :button, "Pass Question", url: answers_path(question_id: @question, passed: true), style:'margin-left: 30px;',class:'btn btn-primary btn-lg'
-	br
-	br
+			 	=f.button :button, "Pass Question", url: answers_path(question_id: @question, passed: true), style:'margin-left: 30px;',class:'btn btn-primary btn-lg'
+				br
+				br
+		div id="extra"
 
 
